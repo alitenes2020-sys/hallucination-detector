@@ -312,5 +312,7 @@ def number_shape(value: str) -> str:
     if len(parts) == 2 and parts[1] in _MULTIPLIERS or base.endswith("percent"):
         return parts[-1]
     if base.isdigit():
+        if len(base) == 4 and 1000 <= int(base) <= 2099:
+            return "year"
         return "digit"
     return base
