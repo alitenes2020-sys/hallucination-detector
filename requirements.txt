@@ -1,0 +1,6 @@
+# Runtime dependencies: none. The detector runs on the Python 3.9+ standard
+# library only, so it can be dropped into any environment.
+#
+# The dependency below is needed only to run the automated test suite.
+
+pytest>=7.0
