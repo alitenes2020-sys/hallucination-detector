@@ -112,6 +112,7 @@ IRREGULAR_LEMMAS: Dict[str, str] = {
     "ran": "run", "led": "lead", "met": "meet", "built": "build", "sold": "sell",
     "won": "win", "lost": "lose", "rose": "rise", "risen": "rise",
     "fell": "fall", "fallen": "fall", "shrank": "shrink", "shrunk": "shrink",
+    "increased": "increase", "decreased": "decrease", "increasing": "increase", "decreasing": "decrease",
     "gave": "give", "given": "give", "told": "tell", "held": "hold", "kept": "keep",
     "felt": "feel", "left": "leave", "read": "read", "struck": "strike",
 }
@@ -144,7 +145,7 @@ def lemma(token: str) -> str:
         word = word[:-2]
         if len(word) >= 3 and word[-1] == word[-2] and word[-1] not in "aeiou":
             word = word[:-1]
-    if word.endswith("e") and len(word) > 4:
+    if word.endswith("e") and len(word) > 4 and not word.endswith(("ease", "crease")):
         word = word[:-1]
     return word
 

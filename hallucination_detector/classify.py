@@ -65,7 +65,7 @@ def _contradiction_flags(
     min_overlap: float,
 ) -> List[Tuple[str, str]]:
     """Return ``(kind, reason)`` for each distinct contradiction signal."""
-    if not retrieved.sentences or retrieved.coverage < min_overlap:
+    if not retrieved.sentences:
         return []
     flags: List[Tuple[str, str]] = []
     seen_kinds: Set[str] = set()
